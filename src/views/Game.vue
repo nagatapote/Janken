@@ -18,7 +18,7 @@
     <button v-show="shows" v-for="item in items" :key="item.key" @click="select(item.key)">
       <img :src="item.src" height="100px"/>
     </button>
-    <p>この勝負…{{ resultText }}</p>
+    <p>この勝負…<span v-html="resultText"></span></p>
     <button v-show="show" @click="retry"><h1>もう一度！</h1></button>
   </div>
 </template>
@@ -67,10 +67,10 @@ export default {
           this.resultText = '引き分けっ'
           break
         case 1:
-          this.resultText = 'あなたの負け…'
+          this.resultText = '<span style="color: blue">あなたの負け…</span>'
           break
         case 2:
-          this.resultText = 'あなたの勝ち！'
+          this.resultText = '<span style="color: red">あなたの勝ち！</span>'
           break
       }
     }
