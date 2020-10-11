@@ -2,14 +2,14 @@
   <div id='Game'>
     <p>じゃんけん！</p>
     <div v-if="pon">
-    <img v-if="this.bot === 0" src="@/assets/gu.png">
-    <img v-if="this.bot === 1" src="@/assets/choki.png">
-    <img v-if="this.bot === 2" src="@/assets/par.png">
+    <img height="100px" v-if="this.bot === 0" src="@/assets/gu.png">
+    <img height="100px" v-if="this.bot === 1" src="@/assets/choki.png">
+    <img height="100px" v-if="this.bot === 2" src="@/assets/par.png">
     </div>
     <div v-show="showp" v-if="you">
-    <img v-if="this.player === 0" src="@/assets/gu.png">
-    <img v-if="this.player === 1" src="@/assets/choki.png">
-    <img v-if="this.player === 2" src="@/assets/par.png">
+    <img height="100px" v-if="this.player === 0" src="@/assets/gu.png">
+    <img height="100px" v-if="this.player === 1" src="@/assets/choki.png">
+    <img height="100px" v-if="this.player === 2" src="@/assets/par.png">
     </div>
     <div v-else>
     <img width="150px" class="animation" src="@/assets/facep.png">
@@ -19,7 +19,7 @@
       <img :src="item.src" height="100px"/>
     </button>
     <p>この勝負…{{ resultText }}</p>
-    <button v-show="show" @click="retry">もう一度！</button>
+    <button v-show="show" @click="retry"><h1>もう一度！</h1></button>
   </div>
 </template>
 <script>
