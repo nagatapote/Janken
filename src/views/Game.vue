@@ -6,13 +6,13 @@
     <img height="100px" v-if="this.bot === 1" src="@/assets/choki.png">
     <img height="100px" v-if="this.bot === 2" src="@/assets/par.png">
     </div>
-    <div v-show="showp" v-if="you">
+    <div v-if="you">
     <img height="100px" v-if="this.player === 0" src="@/assets/gu.png">
     <img height="100px" v-if="this.player === 1" src="@/assets/choki.png">
     <img height="100px" v-if="this.player === 2" src="@/assets/par.png">
     </div>
     <div v-else>
-    <img width="150px" class="animation" src="@/assets/facep.png">
+    <img width="150px" src="@/assets/facep.png">
     </div>
     <br>
     <button v-show="shows" v-for="item in items" :key="item.key" @click="select(item.key)">
@@ -37,7 +37,6 @@ export default {
       you: false,
       pon: false,
       show: false,
-      showp: false,
       shows: true
     }
   },
@@ -48,7 +47,6 @@ export default {
       this.player = key
       this.result()
       this.show = true
-      this.showp = true
       this.shows = false
     },
     retry () {
@@ -57,7 +55,6 @@ export default {
       this.resultText = ''
       this.player = ''
       this.show = false
-      this.showp = false
       this.shows = true
     },
     result () {
